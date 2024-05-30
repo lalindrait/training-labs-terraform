@@ -1,6 +1,6 @@
 #################### NOTES ####################
 # minimal terraform code that executes -This code creates a ec2 instance
-# provide block 
+# Terraform AWS provider documentation - https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 # can get rid of region in provider block if AWS_DEFAULT_REGION variable is set
 # terraform seems to only read ~/.aws/credenstials file not config as it does not pick the region from there
 
@@ -10,9 +10,6 @@
 
 # Use terrform fmt and terraform validate
 #################### END OF NOTES #############
-
-
-# provider "aws" {}
 
 provider "aws" {
   region = "ap-south-1"

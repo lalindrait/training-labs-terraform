@@ -1,7 +1,9 @@
-### Ensure the env variables are not set - env | grep AWS
-### Edit the provider block with credentials
-### This method is not recomended as it stores credentials in text file and can be commited to a repo
-### Never use this method
+#################### NOTES ####################
+# Ensure the env variables are not set - env | grep AWS
+# Edit the provider block with credentials
+# This method is not recomended as it stores credentials in text file and can be commited to a repo
+# Never use this method
+#################### END OF NOTES #############
 
 provider "aws" {
     region = "ap-south-1"
@@ -14,8 +16,8 @@ resource "aws_instance" "my-ec2" {
   instance_type = "t2.micro"
 
   tags = {
-      Name = "bsl-ec2"
-      Owner = "BSL-SL"
+      Name = "test-ec2"
+      Owner = "MSD"
   }
 }
 
