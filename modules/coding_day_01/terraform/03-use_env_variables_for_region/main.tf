@@ -1,4 +1,4 @@
-### Run with empty provider bl`ock
+### Run with empty provider block
 ### terraform will prompt for region
 ### set enviornrment variable - export AWS_DEFAULT_REGION=ap-south-1
 ### check the variables - env | grep AWS

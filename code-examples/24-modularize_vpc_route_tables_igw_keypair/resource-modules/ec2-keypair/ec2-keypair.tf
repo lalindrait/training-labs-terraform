@@ -1,4 +1,0 @@
-resource "aws_key_pair" "ec2_keypair" {
-  key_name   = "cms_key_pair"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDN3upsxii6spQRT1e8dcz7ofu52bre0dyVOB1pJ4XuV43UR1vdTHPJadIeysntjeyGzdGzukxjfLtIUC0zunyW5FbAiL734y/TLIHOwzFKMrbWlFeYXfRLHJe+cGJUL+I348bmGWkJ5jt4MKrhUFeZZHNmeOQ4u822U18HF1U2856cGPnD2JPXU9Apf4OjLg++WeEUAwR46JKT9muhQMPvBRgRROMhR7tqG1KDHnCehJTDtSQu89zMQ17KwU76Dmu9FwlsVd5P8YgI7dPtxRdCZTrw0HdYakLN3RRjVxAdjtHnUnm2maongnMm9lOLKY9EXlMvHVY6ODETs7mY/WJT lali@centos8"
-}
