@@ -1,4 +1,5 @@
 #################### NOTES ####################
+# using env varibale for authentication
 # 1 - Copy the credentials to a seperate file as a backup
 # 2 - Delete the credentials file and run terraform apply terraform will complain - >~/.aws/credentials
 # 3 - Set the environement variables
@@ -9,10 +10,10 @@
 #################### END OF NOTES #############
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
-resource "aws_instance" "my-ec2" {
+resource "aws_instance" "my_ec2" {
   ami           = "ami-01e074f40dfb9999d"
   instance_type = "t2.micro"
 
