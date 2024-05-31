@@ -7,8 +7,9 @@
 # 5 - From environment variables (TF_VAR_varname)
 # 6 - UI input (terraform will prompt for values) Only supported for strings not for lists and maps
 # If none is present default value is used in the declaration
-# When using files all files which match terraform.tfvars or *.auto.tfvars present in the current directory, 
-# Terraform automatically loads them to populate variables
+# When using var files all files which match terraform.tfvars or *.auto.tfvars present in the current directory is used by default. Terraform automatically loads them to populate variables
+# If not custom var file canbe injected using -var-file command arguement
+#  terraform apply -var-file="testing.tfvars"
 #################### END OF NOTES #############
 
 resource "aws_instance" "my-ec2" {
