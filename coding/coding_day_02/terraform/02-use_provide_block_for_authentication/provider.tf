@@ -11,14 +11,3 @@ provider "aws" {
     access_key = "xxx"
     secret_key = "xxxx"
 }
-
-resource "aws_instance" "my_ec2" {
-  ami           = "ami-01e074f40dfb9999d"
-  instance_type = "t2.micro"
-
-  tags = {
-      Name = "test-ec2"
-      Owner = "MSD"
-  }
-}
-
