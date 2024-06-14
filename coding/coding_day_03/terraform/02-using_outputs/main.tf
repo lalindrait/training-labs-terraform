@@ -13,6 +13,11 @@ resource "aws_subnet" "my_public_subnet" {
     cidr_block = var.public_subnet_cidr_ranges[count.index]
     availability_zone = data.aws_availability_zones.available_azs.names[count.index]
     map_public_ip_on_launch = true
+
+  tags = {
+    Name = "snt_${var.region_short_names[var.region]}_public_${data.aws_availability_zones.available_azs.names[count.index]}"
+    Owner = var.ec2_owner
+  }
 }
 
 resource "aws_subnet" "my_private_subnet" {
@@ -21,6 +26,11 @@ resource "aws_subnet" "my_private_subnet" {
     vpc_id = aws_vpc.my_vpc.id
     cidr_block = var.private_subnet_cidr_ranges[count.index]
     availability_zone = data.aws_availability_zones.available_azs.names[count.index]
+
+  tags = {
+    Name = "snt_${var.region_short_names[var.region]}_private_${data.aws_availability_zones.available_azs.names[count.index]}"
+    Owner = var.ec2_owner
+  }
 }
 
 resource "aws_subnet" "my_db_subnet" {
@@ -29,6 +39,11 @@ resource "aws_subnet" "my_db_subnet" {
     vpc_id = aws_vpc.my_vpc.id
     cidr_block = var.db_subnet_cidr_ranges[count.index]
     availability_zone = data.aws_availability_zones.available_azs.names[count.index]
+
+  tags = {
+    Name = "snt_${var.region_short_names[var.region]}_db_${data.aws_availability_zones.available_azs.names[count.index]}"
+    Owner = var.ec2_owner
+  }
 }
 
 resource "aws_instance" "app_ec2" {

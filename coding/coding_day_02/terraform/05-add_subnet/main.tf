@@ -10,6 +10,10 @@ resource "aws_subnet" "my_subnet" {
     vpc_id = aws_vpc.msd_vpc_cidr.id
     cidr_block = var.cidr_block
     availability_zone = var.availability_zone
+
+  tags = {
+    Name = "sdb-subnet"
+  }
 }
 
 resource "aws_instance" "my_ec2" {
