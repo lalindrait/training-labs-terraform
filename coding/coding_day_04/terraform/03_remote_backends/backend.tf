@@ -1,7 +1,7 @@
 #################### NOTES ####################
 # Two things need to be done prior to running this code
 # 1 - Create the s2 bucket in the specified region
-# 2 - Create the DynamoDB Lock Table with parrition key LockID (String)
+# 2 - Create the DynamoDB Lock Table with partition key LockID (String)
 #################### END OF NOTES #############
 # https://developer.hashicorp.com/terraform/language/settings/backends/s3
 

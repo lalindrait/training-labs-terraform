@@ -23,6 +23,14 @@ resource "aws_subnet" "sdb_public_subnet" {
     cidr_block = var.public_subnet_cidr_ranges[count.index]
     availability_zone = data.aws_availability_zones.available_azs.names[count.index]
     map_public_ip_on_launch = true
+
+  tags = merge(local.common_tags,
+    tomap(
+      {
+        "Name" = "snt_${var.region_short_names[var.region]}_public_${data.aws_availability_zones.available_azs.names[count.index]}"
+      }
+    )
+  )
 }
 
 resource "aws_subnet" "sdb_private_subnet" {
@@ -31,6 +39,14 @@ resource "aws_subnet" "sdb_private_subnet" {
     vpc_id = aws_vpc.sdb_vpc.id
     cidr_block = var.private_subnet_cidr_ranges[count.index]
     availability_zone = data.aws_availability_zones.available_azs.names[count.index]
+
+  tags = merge(local.common_tags,
+    tomap(
+      {
+        "Name" = "snt_${var.region_short_names[var.region]}_private_${data.aws_availability_zones.available_azs.names[count.index]}"
+      }
+    )
+  )
 }
 
 resource "aws_subnet" "sdb_db_subnet" {
@@ -39,6 +55,14 @@ resource "aws_subnet" "sdb_db_subnet" {
     vpc_id = aws_vpc.sdb_vpc.id
     cidr_block = var.db_subnet_cidr_ranges[count.index]
     availability_zone = data.aws_availability_zones.available_azs.names[count.index]
+
+  tags = merge(local.common_tags,
+    tomap(
+      {
+        "Name" = "snt_${var.region_short_names[var.region]}_db_${data.aws_availability_zones.available_azs.names[count.index]}"
+      }
+    )
+  )
 }
 
 
