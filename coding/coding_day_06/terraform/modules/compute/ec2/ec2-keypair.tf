@@ -1,0 +1,4 @@
+resource "aws_key_pair" "ec2_keypair" {
+  key_name   = "ec2key_${var.tags.RegionShortName}_${var.tags.ApplicationName}_${var.tags.Environment}_${var.instance_name_suffix}"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8FJvKvNIfdgu1Ry2mc7JxDKq5bc82jhwkh6r9huFM0NG/E5ciqKRdArQeo6qXl3rEZjCAIizZzv26/jtTZJ/SUEQHjiHsIJiIk1HDMhYxKnYFPKXonGis4j2auXwmKDcld+RwtfAeo9GrF0h+5CDZ3x8JzwnG1lWs/ipxI2VKEE/tCD6/Lj29CAwWmQHOkjF9Dd+PlNe1OS9qc9pz1zDiIJlg0Dw+l7QSDarwnThreFSlQBAYHIiyEFoSFvXziJVu7AArpJ1QNUJ1Pa6aO2n5oBZeUn+RPVwpQ5PJB+BJLSson0340y2aBSzdfgMWxfQobPdf/IxT7Np1Nh90lK27ynfDNKDVEqZHSCu/Nzw0pKiy7bcTyYyxAMwm5E/biDNHO/2a9W/iYvLa77GJJHhzWD4DScQ5VK/3KL0sWyYD0B33jB9nJ9zWgImLi4pj2iSjyRSMwDHi8g3lfx4dl7EbrTX5Rrhe0RW3MF8PvGroClUglCY5GBtu5GUp10DOpg8= lalindra@rocky91-lab"
+}
