@@ -1,10 +1,5 @@
-# variable "vpcid" {}
-# variable "rtb_name" {}
-# variable "igw_id" {}
-# variable "subnet_id" {}
-
 resource "aws_route_table" "rtb" {
-  vpc_id            = aws_vpc.vpc.id
+  vpc_id = aws_vpc.vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -12,22 +7,21 @@ resource "aws_route_table" "rtb" {
   }
 
   tags = merge(
-                var.tags, 
-                tomap(
-                    {
-                      "Name" = "rtb_${var.tags.RegionShortName}_${var.tags.ApplicationName}_public_${var.tags.Environment}"
-                      "ResourceType" = "RouteTable"
-                    }                      
-                  )                      
-              )
+    var.tags,
+    tomap(
+      {
+        "Name"         = "rtb_${var.tags.RegionShortName}_${var.tags.ApplicationName}_public_${var.tags.Environment}"
+        "ResourceType" = "RouteTable"
+      }
+    )
+  )
 }
 
 
 resource "aws_route_table_association" "rtb_asc_public" {
   count = length(var.public_subnet_cidr_ranges)
 
-  subnet_id      = "${element(aws_subnet.public_subnet.*.id, count.index)}"
-  # subnet_id      = aws_subnet.public_subnet.id
+  subnet_id = element(aws_subnet.public_subnet.*.id, count.index)
   route_table_id = aws_route_table.rtb.id
 }
 

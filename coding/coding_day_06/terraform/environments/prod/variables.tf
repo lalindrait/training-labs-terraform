@@ -10,12 +10,3 @@ variable "region_short_name" {
     "ap-southeast-1" = "sing"
   }
 }
-
-# locals {
-
-#   region_short_name = {
-#     "ap-south-1"     = "mumbai"
-#     "us-east-1"      = "nv"
-#     "ap-southeast-1" = "sing"
-#   }
-# }
